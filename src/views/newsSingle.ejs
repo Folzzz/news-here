@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="wrapper">
+        <h1>Welcome to your NEWS app</h1>
+        <p><%= title %></p>
+
+        <div class="news__single">
+            <% if (article != null) { %>
+                <img src="<%- article.thumbnail_url %>" alt="<%- article.title.rendered %>">
+                <h3><%- article.title.rendered %></h3>
+                <p><%- article.content.rendered %></p>
+                <a href="/" class="">&larr;- Back</a>
+            <% } else { %>
+                <p>No articles to display</p>
+            <% } %>
+        </div>
+    </div>
+    
+</body>
+</html>
